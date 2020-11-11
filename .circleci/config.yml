@@ -18,4 +18,4 @@ jobs:
       - run: docker ps
       - run: "curl -sL https://raw.githubusercontent.com/soluble-ai/soluble-cli/master/linux-install.sh | sh" 
       - run: "soluble iac-scan tfsec -d terraform/aws --upload --exit-code 1"
-      - run: "soluble iac-scan checkov -d terraform --upload --exit-code 1"
+      - run: "soluble iac-scan checkov -d $PWD/terraform/aws --upload --exit-code 1"
