@@ -12,10 +12,6 @@ jobs:
       - image: ubuntu-1604:202007-01
     steps:
       - checkout
-      - setup_remote_docker:
-          version: 19.03.13
-      # Whatever you want to do
-      - run: docker ps
       - run: "curl -sL https://raw.githubusercontent.com/soluble-ai/soluble-cli/master/linux-install.sh | sh"
       - run: "soluble iac-scan tfsec -d terraform/aws --upload --exit-code 1"
       - run: "soluble iac-scan checkov -d terraform/aws --upload"
