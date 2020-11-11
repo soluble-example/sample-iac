@@ -17,7 +17,7 @@ resource "aws_s3_bucket" "this" {
   # Enable versioning
   versioning {
     enabled = true
-    mfa_delete = true
+    # mfa_delete = true
   }
 
   logging {
