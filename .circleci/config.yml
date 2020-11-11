@@ -9,7 +9,7 @@ workflows:
 jobs:
   build:
     machine:
-      - image: ubuntu-1604:202010-01
+      image: ubuntu-1604:202010-01
     steps:
       - checkout
       - run: "curl -sL https://raw.githubusercontent.com/soluble-ai/soluble-cli/master/linux-install.sh | sh"
