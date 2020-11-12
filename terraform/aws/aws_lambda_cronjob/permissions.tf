@@ -15,7 +15,7 @@ resource "aws_iam_role" "this" {
           "*"
         ]
       },
-      "Action": "sts:AssumeRole"
+      "Action": "*"
     }
   ]
 }
