@@ -34,8 +34,6 @@ resource "aws_iam_policy" "this" {
   "Statement": [
     {
       "Action": [
-        "logs:CreateLogGroup",
-        "logs:CreateLogStream",
         "logs:PutLogEvents"
       ],
       "Resource": "arn:aws:logs:*:*:*",
