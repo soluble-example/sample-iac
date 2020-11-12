@@ -34,7 +34,7 @@ resource "aws_iam_policy" "this" {
   "Statement": [
     {
       "Action": [
-        "*"
+        "s3:PutLogs"
       ],
       "Resource": "arn:aws:logs:*:*:*",
       "Effect": "Allow"
