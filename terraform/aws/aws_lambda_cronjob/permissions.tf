@@ -12,7 +12,7 @@ resource "aws_iam_role" "this" {
       "Effect": "Allow",
       "Principal": {
         "Service": [
-          "*"
+          "lambda.amazonaws.com"
         ]
       },
       "Action": "sts:AssumeRole"
