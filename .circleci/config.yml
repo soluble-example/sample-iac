@@ -15,3 +15,4 @@ jobs:
       - run: "curl -sL https://raw.githubusercontent.com/soluble-ai/soluble-cli/master/linux-install.sh | sh"
       - run: "soluble iac-scan tfsec -d terraform/aws --upload"
       - run: "soluble iac-scan checkov -d terraform/aws --upload  --filter check_result=FAILED --error-not-empty"
+      - run: "soluble iac-scan secrets --upload"
