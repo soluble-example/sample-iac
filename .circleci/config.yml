@@ -16,3 +16,4 @@ jobs:
       - run: "soluble tf-scan tfsec -d terraform/aws --upload"
       - run: "soluble tf-scan checkov -d terraform/aws --upload  --filter check_result=FAILED --error-not-empty"
       - run: "soluble secrets-scan --upload"
+      - run: "soluble build update-pr"
