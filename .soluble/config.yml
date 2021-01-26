@@ -1,5 +1,5 @@
 slack:
-  incomingWebhook: "https://hooks.slack.com/services/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"
+  incomingWebhook: "https://hooks.slack.com/services/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"
 ignore:
    - "soluble-version.json"
    
