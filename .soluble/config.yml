@@ -1,0 +1,7 @@
+slack:
+  incomingWebhook: "https://hooks.slack.com/services/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"
+ignore:
+   - "soluble-version.json"
+   
+suppress:
+#  - "secrets-hex-high-entropy-string"
