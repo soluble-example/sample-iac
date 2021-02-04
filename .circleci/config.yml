@@ -23,4 +23,4 @@ jobs:
       - run: "soluble tf-scan checkov -d terraform/aws --upload "
       - run: "soluble secrets-scan --upload"
       - run: "soluble build update-pr"
-      - run: "soluble build report"
+      - run: "soluble build report --fail high=1"
