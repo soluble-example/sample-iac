@@ -12,8 +12,14 @@ jobs:
       image: ubuntu-1604:202010-01
     steps:
       - checkout
+      # Install soluble CLI using environment variables SOLUBLE_API_TOKEN and SOLUBLE_ORG_ID
+      # Soluble CLI will be installed in the current directory, which will be the root of source tree.
       - run: "curl -sL https://raw.githubusercontent.com/soluble-ai/soluble-cli/master/linux-install.sh | sh"
-      - run: "soluble tf-scan tfsec -d terraform/aws --upload"
-      - run: "soluble tf-scan checkov -d terraform/aws --upload  --filter check_result=FAILED --error-not-empty"
+      # Invoke tfsec and run it on the terraform inside terraform/aws.  Send the results to Soluble Fusion,
+      # and fail if there are 1 or more findings above HIGH.  A critical finding will result in a failure since 
+      # "Critital" is above "High".
+      - run: "soluble tf-scan tfsec -d terraform/aws --upload "
+      # Invoke checkov on the same directory, send the results to soluble fusion.
+      - run: "soluble tf-scan checkov -d terraform/aws --upload "
       - run: "soluble secrets-scan --upload"
       - run: "soluble build update-pr"
