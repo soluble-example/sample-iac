@@ -22,4 +22,4 @@ jobs:
       # Invoke checkov on the same directory, send the results to soluble fusion.
       - run: "soluble tf-scan checkov -d terraform/aws --upload "
       - run: "soluble secrets-scan --upload"
-      - run: "soluble build update-pr"
+      - run: "soluble build update-pr --fail HIGH=1"
